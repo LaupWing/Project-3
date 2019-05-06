@@ -27,4 +27,29 @@ GraphQL bronnen:
 * [Net Ninja GraphQL Tutorial](https://www.youtube.com/watch?v=Y0lDGjwRYKw&list=PL4cUxeGkcC9iK6Qhn-QLcXCXPQUov1U7f)
 
 Wat heb ik geleerd over GraphQL:
-*   
+*   GraphQL zorgt ervoor dat je geen meerdere requests hoeft te maken als je een bepaalde item nodig heb.
+*   Scheelt internet breedband
+
+Hieronder zie je een voorbeeld waarom GraphQL handig is om te gebruiken. Bij een restful api zou je voor hetzelfde resultaat 2 fetches moeten starten, omdat je bij de autheur book id's terug zou krijgen en daarvan moet je weer een fetch gaan starten. Met GraphQL hoef je maar een request te sturen dat er zo uit ziet dan, om alle boeken van een bepaalde auteur op te halen.
+
+GraphQL voorbeeld: 
+```js
+// Query to get book data an its author data(AND other books)
+{
+    book(id:123){
+        title
+        genre
+        reviews{
+            author{
+                name
+                bio{
+                    books{
+                        name
+                    }
+                }
+            }
+        }
+    }   
+}
+
+```
