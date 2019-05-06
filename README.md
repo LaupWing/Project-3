@@ -29,6 +29,7 @@ GraphQL bronnen:
 Wat heb ik geleerd over GraphQL:
 *   GraphQL zorgt ervoor dat je geen meerdere requests hoeft te maken als je een bepaalde item nodig heb.
 *   Scheelt internet breedband
+*   Apollo client zorgt ervoor dat je op de clientside met GraphQL query code kan gebruiken om data op te halen van de GraphQL API
 
 Hieronder zie je een voorbeeld waarom GraphQL handig is om te gebruiken. Bij een restful api zou je voor hetzelfde resultaat 2 fetches moeten starten, omdat je bij de autheur book id's terug zou krijgen en daarvan moet je weer een fetch gaan starten. Met GraphQL hoef je maar een request te sturen dat er zo uit ziet dan, om alle boeken van een bepaalde auteur op te halen.
 
@@ -51,5 +52,5 @@ GraphQL voorbeeld:
         }
     }   
 }
-
+// Je kan ook ervoor kiezen om sommige property's in een object maar terug te krijgen.
 ```
