@@ -24,8 +24,7 @@ export default {
   data(){
       return{
           username: '',
-          password: '',
-          fullname: ''
+          password: ''
       }
   },
   props: {
@@ -33,9 +32,11 @@ export default {
   },
   methods:{
       submitInfo: function(){
-          event.preventDefault()
-          console.log('test')
-          this.fullname = this.username + this.password
+        event.preventDefault()
+        this.$emit('sendInfo', {
+            username: this.username,
+            password: this.password
+        })
       }
   }
 }
@@ -69,7 +70,7 @@ export default {
 }
 .login .input-field input[type="text"]{
     border: none;
-    border-bottom: #FFD259 solid 3px;
+    /* border-bottom: #FFD259 solid 3px; */
     width: 300px;
     padding: 7px 10px;
     outline: none;
@@ -83,13 +84,15 @@ export default {
     color: white;
     text-transform: uppercase; 
     padding: 10px;
-    background: #1BC65B;
+    background: #FFD259;
     border-radius: 5px;
     border: none;
     cursor: pointer;
     margin-bottom: 10px;
     opacity: .9;
     transition: .25s;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 .login button:hover{
     opacity: 1;

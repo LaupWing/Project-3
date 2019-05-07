@@ -6,22 +6,40 @@
             <h1>Kandidaatvinden</h1>
         </div>
     </header>
-    <Login/>
+    
+    <Login
+        v-if='!moderator && !visitor'
+        v-on:sendInfo="sendedInfo"
+    />
+    <Visitor
+        v-if='visitor'
+        :socket="socket"
+    />
   </div>
 </template>
 
 <script>
 import Login from './components/Login.vue'
+import Visitor from './components/Visitor.vue'
 import io from 'socket.io-client'
 export default {
   name: 'app',
   data(){
       return{
-          socket: io('localhost:3000')
+          socket: io('localhost:3000'),
+          moderator: false,
+          visitor: false,
       }
   },
   components: {
-    Login
+    Login,
+    Visitor
+  },
+  methods:{
+      sendedInfo:function(info){
+          if        (info.username === 'moderator') this.moderator = true
+          else if   (info.username === 'visitor')   this.visitor = true
+      }
   }
 }
 </script>
@@ -42,6 +60,7 @@ body{
     color: black;
     width: 100%;
     height: 100%;
+    background: #3EDFB4;
 }
 header{
     position: fixed;
