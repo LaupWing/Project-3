@@ -1,0 +1,27 @@
+{
+  "name": "project3",
+  "version": "1.0.0",
+  "description": "Een project voor lifely. Tijdens dit project ga ik een chat applicatie maken dat mensen verbinden met een intermediar, zodat deze intermediar best passende werk kan verwijzen voor de bezoekers.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LaupWing/Project-3.git"
+  },
+  "author": "Laup Wing",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LaupWing/Project-3/issues"
+  },
+  "homepage": "https://github.com/LaupWing/Project-3#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
+  }
+}
